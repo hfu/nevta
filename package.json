@@ -4,7 +4,7 @@
   "description": "Natural Earth Vector Tiles - installation A",
   "main": "main.js",
   "scripts": {
-    "run": "node main.js",
+    "run": "node main.js > work/data.ndjson",
     "tippecanoe": "docker-compose run --rm tippecanoe"
   },
   "repository": {
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/hfu/nevta#readme",
   "dependencies": {
-    "node-wget": "^0.4.2"
+    "node-fetch": "^1.7.3",
+    "shapefile": "^0.6.6",
+    "unzip": "^0.1.11"
   }
 }
