@@ -1,0 +1,3 @@
+tippecanoe:
+  image: tippecanoe:latest
+  command: tippecanoe --help

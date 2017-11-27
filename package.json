@@ -1,0 +1,23 @@
+{
+  "name": "nevta",
+  "version": "1.0.0",
+  "description": "Natural Earth Vector Tiles - installation A",
+  "main": "main.js",
+  "scripts": {
+    "run": "node main.js",
+    "tippecanoe": "docker-compose run --rm tippecanoe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hfu/nevta.git"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/hfu/nevta/issues"
+  },
+  "homepage": "https://github.com/hfu/nevta#readme",
+  "dependencies": {
+    "node-wget": "^0.4.2"
+  }
+}
