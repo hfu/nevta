@@ -2,4 +2,4 @@ tippecanoe:
   image: tippecanoe:latest
   volumes:
     - "./work:/tmp/work"
-  command: tippecanoe --output=/tmp/work/data.mbtiles --maximum-zoom=6 -f /tmp/work/data.ndjson
+  command: tippecanoe --output=/tmp/work/data.mbtiles --maximum-zoom=6 --base-zoom=6 -f /tmp/work/data.ndjson

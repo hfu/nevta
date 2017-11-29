@@ -1,7 +1,7 @@
 const shapefile = require('shapefile')
 const layers = ['ne_50m_land', 'ne_10m_populated_places']
 const to_delete = [
-  'scalerank', 'featurecla', 'min_zoom'
+  'scalerank', 'featurecla'
 ]
 
 layers.forEach(layer => {
@@ -9,10 +9,10 @@ layers.forEach(layer => {
     .then(s => s.read()
       .then(function work(r) {
         if(r.done) return
-        if(!r.value.properties) return
         r.value.tippecanoe = {
           "layer": layer,
-          "minzoom": r.value.properties.min_zoom
+          "minzoom": (r.value.properties.min_zoom > 6) ?
+            6 : r.value.properties.min_zoom
         }
         for(let v in r.value.properties) {
           if(to_delete.indexOf(v) != -1) {

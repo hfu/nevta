@@ -4,8 +4,8 @@
   "description": "Natural Earth Vector Tiles - installation A",
   "main": "main.js",
   "scripts": {
-    "run": "node main.js > work/data.ndjson",
-    "tippecanoe": "docker-compose run --rm tippecanoe"
+    "build": "echo node download.js; node to_geojson.js > work/data.ndjson; docker-compose run --rm tippecanoe",
+    "serve": "docker run --rm -it -v ${PWD}/work:/data -p 8080:80 klokantech/tileserver-gl-light"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hfu/nevta#readme",
   "dependencies": {
     "node-fetch": "^1.7.3",
+    "qs": "^6.5.1",
     "shapefile": "^0.6.6",
     "unzip": "^0.1.11"
   }
